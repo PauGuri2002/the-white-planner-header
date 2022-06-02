@@ -59,7 +59,7 @@ button{
 }
 #mobile-sidebar{
     display: none;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     height: 100vh;
@@ -99,6 +99,15 @@ button{
     color: #79A7F3;
     background: transparent;
     border: 2px solid #79A7F3;
+}
+#socials{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 30px 25px;
+}
+#socials img{
+    margin-left: 20px;
 }
 
 /* BANNER */
