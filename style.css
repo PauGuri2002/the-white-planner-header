@@ -7,6 +7,7 @@ body{
     background: #fffdfa;
     font-family: 'Work Sans', Helvetica, Arial, sans-serif;
     font-weight: 500;
+    overflow-x: hidden;
 }
 button{
     cursor: pointer;
@@ -19,7 +20,7 @@ button{
     justify-content: space-between;
     margin: 25px 30px 80px 30px;
 }
-#top-bar img{
+#top-bar img, #mobile-sidebar img{
     cursor: pointer;
 }
 .menu-item {
@@ -49,12 +50,55 @@ button{
 }
 #mobile-top-bar{
     background: #D7E3F8;
-    padding: 14.5px 20px;
+    padding: 14.5px 12px;
     text-align: right;
     display: none;
 }
 #mobile-burger{
     display: none;
+}
+#mobile-sidebar{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: fit-content;
+    padding: 50px 33px;
+    background: #D7E3F8;
+    text-align: right;
+    transition: transform .2s;
+}
+#mobile-sidebar.hidden{
+    transform: translateX(100%);
+}
+#mobile-sidebar ul{
+    list-style: none;
+    font-size: 16px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+#mobile-sidebar ul li{
+    margin-bottom: 35px;
+}
+#mobile-sidebar button{
+    width: 190px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 18px;
+    padding: 16px;
+}
+#sidebar-btn1{
+    color: white;
+    background: #79A7F3;
+    border: none;
+    margin-bottom: 30px;
+}
+#sidebar-btn2{
+    color: #79A7F3;
+    background: transparent;
+    border: 2px solid #79A7F3;
 }
 
 /* BANNER */
@@ -98,6 +142,12 @@ button{
 /* ADAPTATIVE */
 
 @media (max-width: 980px){
+    #top-bar{
+        margin: 20px 25px 80px 25px;
+    }
+    #logo{
+        width: 208px;
+    }
     #desktop-menu{
         display: none;
     }
@@ -105,6 +155,9 @@ button{
         display: block;
     }
     #mobile-burger{
+        display: block;
+    }
+    #mobile-sidebar{
         display: block;
     }
 
@@ -122,5 +175,17 @@ button{
     #banner-text button{
         font-size: 18px;
         padding: 16px 35px;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        margin-bottom: 50px;
+    }
+    #banner{
+        flex-direction: column-reverse;
+    }
+    #banner > *{
+        width: 100%;
     }
 }

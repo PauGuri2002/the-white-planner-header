@@ -18,13 +18,27 @@
         <a class="menu-item" href="#">Novios</a>
     </div>
     <div id="top-bar">
-        <img src="./img/logo.svg" alt="logo The White Planner" width="279" height="33">
+        <img id="logo" src="./img/logo.svg" alt="logo The White Planner" width="279" height="33">
         <div id="desktop-menu">
             <a class="menu-item selected" href="#">Wedding Planners</a>
             <a class="menu-item" href="#">Novios</a>
             <button>Inicia Sesión</button>
         </div>
-        <div id="mobile-burger"></div>
+        <img id="mobile-burger" src="./img/menu.png" alt="menú" onclick="toggleSidebar(true)" width="22" height="22">
+    </div>
+    <div id="mobile-sidebar" class="hidden">
+        <img id="close-sidebar" src="./img/close.png" alt="cerrar menú" onclick="toggleSidebar(false)" width="22" height="22">
+        <ul>
+            <li>¿Qué es TWP?</li>
+            <li>Aplicaciones</li>
+            <li>Precios</li>
+            <li>Preguntas frecuentes</li>
+            <li>Próximas funcionalidades</li>
+            <li>Nuestra historia</li>
+            <li>Contacto</li>
+        </ul>
+        <button id="sidebar-btn1">Empieza gratis</button><br>
+        <button id="sidebar-btn2">Inicia sesión</button>
     </div>
     <div id="banner">
         <div id="banner-text">
@@ -34,6 +48,17 @@
         </div>
         <img src="./img/Dashboard.png" width="1500" height="1205">
     </div>
-    <script src="main.js"></script>
+
+    <script>
+        var sidebar = document.getElementById("mobile-sidebar");
+        function toggleSidebar(open){
+            if(open){
+                sidebar.classList.remove("hidden");
+            } else {
+                sidebar.classList.add("hidden");
+            }
+            
+        }
+    </script>
 </body>
 </html>
