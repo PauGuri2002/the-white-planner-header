@@ -197,4 +197,7 @@ button{
     #banner > *{
         width: 100%;
     }
+    #banner-text{
+        padding-right: 25px;
+    }
 }
